@@ -1,13 +1,9 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(urdf_tutorial)
 
-find_package(catkin REQUIRED)
-catkin_package()
-
-if(CATKIN_ENABLE_TESTING)
-  find_package(roslaunch REQUIRED)
-  roslaunch_add_file_check(launch)
-endif()
+find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY images meshes launch rviz urdf
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+  DESTINATION share/${PROJECT_NAME})
+
+ament_package()
